@@ -15,6 +15,16 @@ const ProductsList = () => {
       .finally(() => setLoading(false))
   }
 
+  const _deleteProduct = (id) => {
+    api.delete(`products/${id}`, config)
+      .then(response => {
+        if (response.status === 204) {
+          alert("Deleted")
+        }
+      })
+      .catch(error => alert(error))
+  }
+
   useEffect(() => {
     _getProducts();
   }, [])
@@ -44,7 +54,8 @@ const ProductsList = () => {
                     <td>{product.name}</td>
                     <td>{product.description}</td>
                     <td>{product.slug}</td>
-                    <td><a href="">Ver</a></td>
+                    <td><Link to={`/prodcuts/show/${product.id}`}>Ver</Link></td>
+                    <td><button onClick={() => _deleteProduct(product.id)}>Deletar</button></td>
                   </tr>
                 ))
               }
