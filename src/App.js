@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import ProductsList from "./pages/Products/List";
 import CreateProduct from "./pages/Products/Create";
 import ShowProduct from "./pages/Products/Show";
+import UpdateProduct from "./pages/Products/Update";
 
 function App() {
   return (
@@ -15,9 +16,10 @@ function App() {
           <Switch>
             <Route exact path="/" component={Register}/>
             <Route exact path="/login" component={Login} />
-            <Route path="/products" component={ProductsList} />
-            <Route path="/prodcuts/create" component={CreateProduct} />
-            <Route path="/prodcuts/show/:id" component={ShowProduct} />
+            <Route exact path="/products" component={ProductsList} />
+            <Route exact path="/products/create" component={CreateProduct} />
+            <Route exact path="/products/show/:id" component={ShowProduct} />
+            <Route exact path="/products/update/:id" component={UpdateProduct} />
           </Switch>
         </BrowserRouter>
       </header>
