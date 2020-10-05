@@ -27,7 +27,9 @@ const ProductsList = () => {
   }
 
   useEffect(() => {
-    _getProducts();
+    setTimeout(() => {
+      _getProducts();
+    }, 2000)
   }, [])
 
   return (
