@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {useParams} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import {config} from "../../../config/authorization";
 import api from "../../../shared/api";
 
@@ -19,8 +19,6 @@ const ShowProduct = () => {
   useEffect(() => {
     _getProduct();
   }, [])
-
-  console.log(product)
 
   return (
     <div>
@@ -73,6 +71,7 @@ const ShowProduct = () => {
           }
         </div>
       }
+      <Link to={`/products/update/${id}`}>Editar</Link>
     </div>
   )
 }

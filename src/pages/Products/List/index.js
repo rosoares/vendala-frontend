@@ -55,7 +55,7 @@ const ProductsList = () => {
                     <td>{product.name}</td>
                     <td>{product.description}</td>
                     <td>{product.slug}</td>
-                    <td><Link to={`/prodcuts/show/${product.id}`}>Ver</Link></td>
+                    <td><Link to={`/products/show/${product.id}`}>Ver</Link></td>
                     <td><button onClick={() => _deleteProduct(product.id)}>Deletar</button></td>
                   </tr>
                 ))
@@ -65,7 +65,7 @@ const ProductsList = () => {
           </div>
       }
       <br />
-      <Link to="/prodcuts/create">
+      <Link to="/products/create">
         <button type="button">Novo Produto</button>
       </Link>
     </div>
