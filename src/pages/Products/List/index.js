@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {config} from "../../../config/authorization";
 import api from "../../../shared/api";
 import '../../../App.css';
+import {Link} from "react-router-dom";
 
 const ProductsList = () => {
 
@@ -63,6 +64,10 @@ const ProductsList = () => {
             </table>
           </div>
       }
+      <br />
+      <Link to="/prodcuts/create">
+        <button type="button">Novo Produto</button>
+      </Link>
     </div>
   )
 }
